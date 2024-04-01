@@ -1,0 +1,9 @@
+{
+  "dependencies": {
+    "inquirer": "^9.2.17",
+    "typescript": "^5.4.3"
+  },
+  "devDependencies": {
+    "@types/node": "^20.12.2"
+  }
+}
