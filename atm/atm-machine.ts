@@ -13,7 +13,7 @@ var userInput = readline.createInterface(
 var original_pin: number = 54321;
 var balance: number = 10000;
 
-const askPin = (): any => {
+const askPin = (): void => {
     userInput.question('Enter your pin: ', (pin: number) => {
         if (pin == original_pin) {
             console.log('Welcome to your ATM machine');
@@ -26,7 +26,7 @@ const askPin = (): any => {
     })
 }
 
-const performAction = () => {
+const performAction = ():void => {
     userInput.question("\n=========================================================\nWhat you want\n1. Press 1 for Balance Inquiry\n2. Press 2 for With draw\n3. Press 3 for Deposit Money.\n4. Press 4 to quit this menu \n=========================================================\n", (input: string) => {
         switch (input) {
             case '1':

@@ -10,9 +10,9 @@ let height;
 let weight;
 let bmi;
 user_input.question("Enter your Height in inches: ", (h) => {
-    user_input.question("Enter your Weight in lbs: ", (w) => {
+    user_input.question("Enter your Weight in kg: ", (w) => {
         height = h;
-        weight = w;
+        weight = w * 2.205;
         bmi = (weight * 703) / (height * height);
         console.log(`Your BMI is: ${bmi.toFixed(2)}`);
         if (bmi <= 18.5) {
@@ -30,10 +30,3 @@ user_input.question("Enter your Height in inches: ", (h) => {
         user_input.close();
     });
 });
-/*
-BMI Categories:
-Underweight = <18.5
-Normal weight = 18.5–24.9
-Overweight = 25–29.9
-Obesity = BMI of 30 or greater
-*/ 
