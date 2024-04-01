@@ -1,4 +1,4 @@
-import * as readline from 'readline';
+var readline = require("readline");
 
 function calculate(num1: number, num2: number, operator: string): number | string {
     if (operator === "+") {
@@ -18,17 +18,17 @@ const questions = [
     {
         type: 'input',
         name: 'num1',
-        message: 'Enter the first number:',
+        message: 'Enter the first number: ',
     },
     {
         type: 'input',
         name: 'num2',
-        message: 'Enter the second number:',
+        message: 'Enter the second number: ',
     },
     {
         type: 'list',
         name: 'operation',
-        message: 'Select the operation:\n+\n-\n*\n/\n:',
+        message: 'Select the operation:\n+\n-\n*\n/\n',
     }
 ];
 
@@ -42,7 +42,7 @@ let num2: number;
 let operator: string;
 
 function askForNum1() {
-    user_input.question(questions[0].message, (input) => {
+    user_input.question(questions[0].message, (input:any) => {
         num1 = parseInt(input);
         if (isNaN(num1)) {
             console.log('Invalid input. Please enter a valid number.');
@@ -54,7 +54,7 @@ function askForNum1() {
 }
 
 function askForNum2() {
-    user_input.question(questions[1].message, (input) => {
+    user_input.question(questions[1].message, (input:any) => {
         num2 = parseInt(input);
         if (isNaN(num2)) {
             console.log('Invalid input. Please enter a valid number.');
@@ -67,7 +67,7 @@ function askForNum2() {
 
 function askForOperator() {
 
-    user_input.question(questions[2].message, (input) => {
+    user_input.question(questions[2].message, (input:any) => {
         operator = input;
         const result = calculate(num1, num2, operator);
         if (typeof result == 'string')

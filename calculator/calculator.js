@@ -1,5 +1,4 @@
 "use strict";
-Object.defineProperty(exports, "__esModule", { value: true });
 var readline = require("readline");
 function calculate(num1, num2, operator) {
     if (operator === "+") {
@@ -22,17 +21,17 @@ var questions = [
     {
         type: 'input',
         name: 'num1',
-        message: 'Enter the first number:',
+        message: 'Enter the first number: '
     },
     {
         type: 'input',
         name: 'num2',
-        message: 'Enter the second number:',
+        message: 'Enter the second number: '
     },
     {
         type: 'list',
         name: 'operation',
-        message: 'Select the operation:\n+\n-\n*\n/',
+        message: 'Select the operation:\n+\n-\n*\n/\n'
     }
 ];
 var user_input = readline.createInterface({
