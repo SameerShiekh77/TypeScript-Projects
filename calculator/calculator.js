@@ -17,32 +17,15 @@ function calculate(num1, num2, operator) {
         return "Invalid operator";
     }
 }
-var questions = [
-    {
-        type: 'input',
-        name: 'num1',
-        message: 'Enter the first number: '
-    },
-    {
-        type: 'input',
-        name: 'num2',
-        message: 'Enter the second number: '
-    },
-    {
-        type: 'list',
-        name: 'operation',
-        message: 'Select the operation:\n+\n-\n*\n/\n'
-    }
-];
 var user_input = readline.createInterface({
     input: process.stdin,
     output: process.stdout
 });
-var num1;
-var num2;
-var operator;
+let num1;
+let num2;
+let operator;
 function askForNum1() {
-    user_input.question(questions[0].message, function (input) {
+    user_input.question("Enter the first number: ", (input) => {
         num1 = parseInt(input);
         if (isNaN(num1)) {
             console.log('Invalid input. Please enter a valid number.');
@@ -54,7 +37,7 @@ function askForNum1() {
     });
 }
 function askForNum2() {
-    user_input.question(questions[1].message, function (input) {
+    user_input.question("Enter the second number: ", (input) => {
         num2 = parseInt(input);
         if (isNaN(num2)) {
             console.log('Invalid input. Please enter a valid number.');
@@ -66,15 +49,15 @@ function askForNum2() {
     });
 }
 function askForOperator() {
-    user_input.question(questions[2].message, function (input) {
+    user_input.question("Select the operation:\n+\n-\n*\n/\n", (input) => {
         operator = input;
-        var result = calculate(num1, num2, operator);
+        const result = calculate(num1, num2, operator);
         if (typeof result == 'string') {
-            console.log('Invalid operator. Please enter a valid operator.');
+            console.log('Invalid operator. Please enter a valid operator.\n');
             askForOperator();
         }
         else {
-            console.log("Result: ".concat(result));
+            console.log(`Result: ${result}`);
             user_input.close();
         }
     });
