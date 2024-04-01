@@ -1,3 +1,5 @@
+// Create BMI Calculator
+
 var readline = require("readline");
 
 var user_input = readline.createInterface({

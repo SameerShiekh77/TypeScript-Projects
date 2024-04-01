@@ -1,3 +1,6 @@
+// create simple calculator
+
+
 var readline = require("readline");
 
 function calculate(num1: number, num2: number, operator: string): number | string {

@@ -1,4 +1,5 @@
 "use strict";
+// create simple calculator
 var readline = require("readline");
 function calculate(num1, num2, operator) {
     if (operator === "+") {
